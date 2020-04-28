@@ -2,7 +2,7 @@
 title: "Setting up Zowe on Linux"
 author: James Conroy
 date: 2020-04-20T21:20:53-05:00
-draft: true
+draft: false
 ---
 
 I have been interested in learning COBOl and mainframes for a couple of months now, but I've been stymied by the difficulty of setting up a good mainframe emulator.
