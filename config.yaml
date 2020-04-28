@@ -1,6 +1,6 @@
 baseUrl: /
 languageCode: en-us
-theme: "github.com/panr/hugo-theme-terminal"
+theme: "terminal"
 paginate: 5
 
 params:
