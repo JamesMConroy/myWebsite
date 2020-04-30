@@ -5,8 +5,4 @@ What that means is that I am 'eyes on glass' watching the companies monitors, an
 Due to a recent database error my official title in Skype is 'Time and Materials' which sounds so ridiculous. I need to put it on a business card.
 
 
-# Skills
-- Ansible
-- Linux
-- C/C++
-
+This website is mostly going to be a collection of things I've found usefull and would forget if I never wrote down.
