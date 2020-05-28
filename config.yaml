@@ -1,4 +1,4 @@
-baseUrl: /
+baseUrl: https://hannibaladportas.dev/
 languageCode: en-us
 theme: "terminal"
 paginate: 5
@@ -20,6 +20,7 @@ params:
 languages:
   en:
     languageName: English
+    languageCode: "en-us"
     title: Hannibal Ad Portas
     subtitle: To Be Determined
     keywords: ''
