@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Hannibal Ad Portas</title>
+    <link>https://hannibaladportas.dev/posts/</link>
+    <description>Recent content in Posts on Hannibal Ad Portas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 02 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://hannibaladportas.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Custom Prompt on Remote Servers</title>
+      <link>https://hannibaladportas.dev/posts/ssh-prompt/</link>
+      <pubDate>Sat, 02 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hannibaladportas.dev/posts/ssh-prompt/</guid>
+      <description>The Insanity In my job I have to ssh into a lot of servers to do preventive and routine maintenance. These servers tend to have a patch work of settings and configurations. During a shift I can touch Redhat, AIX, and HP-UX servers. These servers do not have a consistent prompt. Some show user@hostname $, others just display bash-#.#.#, and several are just a lonely $ devoid of any context to keep you from bricking the server or deleting HIPPA records.</description>
+    </item>
+    
+    <item>
+      <title>Surf(ing) on Wayland</title>
+      <link>https://hannibaladportas.dev/posts/surfing-on-wayland/</link>
+      <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hannibaladportas.dev/posts/surfing-on-wayland/</guid>
+      <description>Surf Surf is a strange web browser. In a world where web browsers come default with the ability to:
+ sync your settings across devices manage your passwords block ads remember your history manage bookmarks  Surf&amp;rsquo;s feature list is incredibly sparse.
+ It is able to display websites and follow links.
+ That&amp;rsquo;s it. No history, no bookmarks, no search bar, no tabs! None of the features that modern web browsers insist on including.</description>
+    </item>
+    
+    <item>
+      <title>Setting up Zowe on Linux</title>
+      <link>https://hannibaladportas.dev/posts/setting-up-zowe-on-linux/</link>
+      <pubDate>Mon, 20 Apr 2020 21:20:53 -0500</pubDate>
+      
+      <guid>https://hannibaladportas.dev/posts/setting-up-zowe-on-linux/</guid>
+      <description>I have been interested in learning COBOl and mainframes for a couple of months now, but I&amp;rsquo;ve been stymied by the difficulty of setting up a good mainframe emulator. The Hercules mainframe emulator has a lot of conflicting install instructions (and the top search result was last updated in 2010); so I was excited when the global pandemic highlighted the need for engineers who understood these systems. In the past month IBM has started the Open Mainframe Project with the intent of filling the skills gap for mainframes.</description>
+    </item>
+    
+  </channel>
+</rss>
