@@ -3,7 +3,7 @@ title = "Working On Election Day"
 date = "2020-11-07"
 author = "James Conroy"
 tags = ["2020 Election", "Good News"]
-description = "My Experience Watching the Poles on Election Day 2020"
+description = "My Experience Watching the Polls on Election Day 2020"
 showFullContent = false
 +++
 
