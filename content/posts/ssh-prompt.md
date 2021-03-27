@@ -41,23 +41,25 @@ The function gather's facts about the remote server you are trying to access, an
 
 ``` bash
 ssh () {
-	# gather facts about the remote host
-	local remoteFacts=$(command ssh -t username@"$@" "bash --version | head -n1 ; uname")
+  # gather facts about the remote host
+  local remoteFacts=$(command ssh -t username@"$@" "bash --version | head -n1 ; uname")
 
-	# if remoteFacts does not contain not (ie the server has bash) launch an interactive bash session with these env varables
-	if [[ ! remoteFacts ~= 'not' ]]
-	then
-		command ssh -t "username@"$@" "export PS1='set your prompt string here' ; bash -i"
-	# if the serrver does not have bash
-	elfi [[ remoteFacts ~= 'aix' ]]
-	then
-		# Same thing but with AIX settings
-	elif [[ remoteFacts ~= 'HP-Uz' ]]
-	then
-		# Same thing but with HP-UX settings
-	else 
-		# default incase no other logic is correct
-	fi
+  # if remoteFacts does not contain 'not' (ie the server has bash)
+  # launch an interactive bash session with these env varables
+  if [[ ! remoteFacts ~= 'not' ]]
+  then
+    command ssh -t "username@${@}" "export PS1='set your prompt string here' ; bash -i"
+  # if the serrver does not have bash check it's OS
+  elif [[ remoteFacts ~= 'aix' ]]
+  then
+    # Same thing but with AIX settings
+  elif [[ remoteFacts ~= 'HP-UX' ]]
+  then
+    # Same thing but with HP-UX settings
+  else 
+    # default incase no other logic is correct
+  fi
+}
 ```
 
 This simple wrapper lets me use bash when available, set up a useful prompt string, and fix the various quirks of ksh when it's unavoidable.
