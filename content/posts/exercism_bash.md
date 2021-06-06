@@ -375,3 +375,6 @@ fi
 With that all the tests are passing and the script is ready for final refactoring.
 In this case I'm just going to wrap up all the logic not in `findMatch()` into a `main()` function at the start of the script.
 This will let you look at the script's logic in the order it is used, without having to wade through a long function definition first.
+
+
+You can find all the code on my [github](https://github.com/JamesMConroy/grep.sh).
