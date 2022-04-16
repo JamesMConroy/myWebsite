@@ -68,7 +68,7 @@ Since the existing infrastructure was set up with apache[^4] I went with it.
 
 The configuration snippet to serve the packages is:
 
-``` apache
+``` apacheconf
 SetEnv GIT_PROJECT_ROOT /var/www/git
 SetEnv GIT_HTTP_EXPORT_ALL
 ScriptAlias /git/ /usr/lib/git-core/git-http-backend/
@@ -81,11 +81,11 @@ SetEnvIf Git-Protocol ".*" GIT_PROTOCOL=$0
 </LocationMatch>
 ```
 
-> Note: The documentation for `git-http-backend` seems to be written for RH distros.
-> Debian's man pages for `git-http-backend` have the wrong paths.
+> **Note:** The documentation for `git-http-backend` seems to be written for RedHat distros.
+> Both Debian's man page and the official git book list the wrong path for `git-http-backend`.
 > Both documents say to set the `ScriptAlias` to `/usr/libexec/git-core/git-http-backend/`
 > instead of the correct `/usr/lib/git-core/git-http-backend/` path.
-> Make sure to find the correct path for the bin, and don't forget the trailing `/` like I did
+> Make sure you use the correct path, and don't forget the trailing `/` like I did
 
 Now that we are serving git we have to let `nimble` know about them.
 Remember that `packages.json` file we got all those URLs from, `nimble` uses that to figure out how to get the packages.
@@ -129,14 +129,14 @@ So I made a webpage to explain how[^5].
 </html>
 ```
 
-{{< image src="/img/nim-web.png" alt="Instruction on how to use the nim package server and a list of the available packages" position="center" style="border-radius: 8px;" >}}
 
 That `<!--#include file="./packages.html" -->` line is so I can display a list of all the packages available.
 You just need tell apache to allow [includes](https://httpd.apache.org/docs/2.4/mod/mod_include.html)[^6]
 
 [^6]: props to [css-tricks](https://css-tricks.com/the-simplest-ways-to-handle-html-includes/) for the how to.
 
-``` apache
+
+``` apacheconf
 <directory "/var/www/html/nim/">
     options includes
     addtype text/html .html
@@ -149,10 +149,11 @@ And a simple script to populate the `packages.html` file:
 ``` bash
 > /var/www/html/nim/packages.html # ensure the file exists and is empty
 for d in /var/nim/git/* ; do
-  printf "<li>%s<li>\n" "${d}" >> /var/www/html/nim/packages.html
+  printf "<li>%s</li>\n" "${d}" >> /var/www/html/nim/packages.html
 done
 ```
+Giving us a nice (if a little simple webpage).
 
-> I will probably generate the list, sort it and replace the file if they differ.
+{{< image src="/img/nim-web.png" alt="Instruction on how to use the nim package server and a list of the available packages" position="center" style="border-radius: 8px;" >}}
 
 The last step is to tell the devs about it and see if they break anything.
