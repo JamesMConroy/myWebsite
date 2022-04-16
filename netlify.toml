@@ -1,5 +1,8 @@
+[context.production.environment]
+  HUGO_VERSION = "0.83.1"
+
 [context.deploy-preview.environment]
-  HUGO_VERSION = "0.69"
+  HUGO_VERSION = "0.83.1"
 
 [build]
-  functions = "functions" 
+  functions = "functions"

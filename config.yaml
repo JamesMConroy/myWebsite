@@ -1,9 +1,16 @@
+---
 baseUrl: https://hannibaladportas.dev/
 languageCode: en-us
 theme: "terminal"
 paginate: 5
 
 params:
+  autoCover: true
+  readingtime: true
+  enableGitInfo: true
+  showLastUpdated: false
+  updatedDatePrefix: "Updated"
+
   # dir name of your blog content (default is `content/posts`)
   contentTypeName: posts
   # ["orange", "blue", "red", "green", "pink"]
@@ -35,12 +42,13 @@ languages:
 
     menu:
       main:
-      - identifier: about
-        name: About
-        url: /about
-      - identifier: github
-        name: GitHub
-        url: "https://github.com/JamesMConroy"
-      - identifier: RSS
-        name: RSS
-        url: /index.xml
+        - identifier: about
+          name: About
+          url: /about
+        - identifier: github
+          name: GitHub
+          url: "https://github.com/JamesMConroy"
+        - identifier: RSS
+          name: RSS
+          url: /index.xml
+...
