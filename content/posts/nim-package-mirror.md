@@ -157,3 +157,5 @@ Giving us a nice (if a little simple webpage).
 {{< image src="/img/nim-web.png" alt="Instruction on how to use the nim package server and a list of the available packages" position="center" style="border-radius: 8px;" >}}
 
 The last step is to tell the devs about it and see if they break anything.
+
+-------------------------------------------------------------------------------
