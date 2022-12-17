@@ -84,12 +84,12 @@ Before that I want to encapsulate our current script in its own function.
 ``` bash
 findMatch() {
   while read line
-    do
-      if [[ ${line} =~ ${1} ]]
+  do
+    if [[ ${line} =~ ${1} ]]
         then
           echo ${line}
     fi
-      done < ${2}
+   done < ${2}
 }
 
 findMatch "${@}"
@@ -107,7 +107,7 @@ findMatch() {
   number=0
   while read line
   do
-    (( number+=1))
+    (( number+=1 ))
     if [[ ${line} =~ ${1} ]]
     then
       if $lineNumber
@@ -208,7 +208,7 @@ You can place it either at the start, or just at your problem areas.
 
 Setting `-v` tells bash to print each line in your script as it is read.
 The `-x` option will print the expansion of each command after.
-These two commands let you see just what your script is ding during execution.
+These two commands let you see just what your script is doing during execution.
 Think of it like print statement debugging on steroids.
 
 In my case the script was setting the regex to the third flag and the filename to what should of been the pattern.
@@ -277,23 +277,26 @@ findMatch() {
   while read line
   do
     output=""
-    (( number+=1))
+    (( number+=1 ))
     if [[ "${line}" =~ ${regex} ]]
     then
+
       # Break early if we only want to know the files with lines that match
       if [[ ${options} =~ l ]]
       then
         echo ${file}
         break
       fi
+
       if [[ ${options} =~ n ]]
       then
-
         output="${number}:"
       fi
+
       output+="${line}"
       echo ${output}
     fi
+
   done < ${file}
 }
 
@@ -319,8 +322,8 @@ fi
 shift 1
 
 findMatch "${regex}" "${options}" "${@}"
-
 ```
+
 A quick check with bats shows the same number of passing tests as before, so we haven't broken anything.
 
 ### Invert Matches
@@ -336,7 +339,7 @@ I achieved this by changing the if statement to:
 
 ``` bash
 if ( [[ "${line}" =~ ${regex} ]] && [[ ! ${options} =~ v ]] ) ||
-   [[ ! "${line}" =~ ${regex} ]] && [[ ${options} =~ v ]] )
+     [[ ! "${line}" =~ ${regex} ]] && [[ ${options} =~ v ]] )
 ```
 
 ## Multiple Files
